@@ -25,7 +25,7 @@ class Program
                     Console.WriteLine("Saliendo del programa");
                     return;
                 default:
-                    Console.WriteLine("Opción no válida. Inténtalo de nuevo.");
+                    Console.WriteLine("Opción no válida. Inténtalo de nuevo..");
                     break;
             }
         }
