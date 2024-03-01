@@ -92,24 +92,53 @@
 //    } 
 //}
 //Ejercicio 3
-using System;
-class Program
-{
-    static void Main()
-    {
-        try
-        {
-            Console.WriteLine("Ingrese un numero entero para mostrarle una tabla de multiplicar el 1 al 10");
-            int num = int.Parse(Console.ReadLine());
+//using System;
+//class Program
+//{
+//    static void Main()
+//    {
+//        try
+//        {
+//            Console.WriteLine("Ingrese un numero entero para mostrarle una tabla de multiplicar el 1 al 10");
+//            int num = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= 10; i++)
-            {
-                Console.WriteLine(num + "*" + i + "=" + num * i);
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Ha ingresado un valor invalido, vuelva a intentar");
-        }
+//            for (int i = 1; i <= 10; i++)
+//            {
+//                Console.WriteLine(num + "*" + i + "=" + num * i);
+//            }
+//        }
+//        catch (Exception ex)
+//        {
+//            Console.WriteLine("Ha ingresado un valor invalido, vuelva a intentar");
+//        }
+//    }
+//}
+//Ejercicio 4 
+Random random = new Random();
+int numeroAleatorio = random.Next(1, 101);
+int intentos = 0;
+int intentoUsuario;
+
+Console.WriteLine("Adivina el numero correcto");
+Console.WriteLine("Se ha generado un numero aleatorio entre 1 y 100 adivina cual es: ");
+
+do
+{
+    Console.Write("Ingresa un numero: ");
+    intentoUsuario = Convert.ToInt32(Console.ReadLine());
+    intentos++;
+
+    if (intentoUsuario < numeroAleatorio)
+    {
+        Console.WriteLine("El número es mayor. ¡Intenta nuevamente!");
     }
-}
+    else if (intentoUsuario > numeroAleatorio)
+    {
+        Console.WriteLine("El número es menor. ¡Intenta nuevamente!");
+    }
+    else
+    {
+        Console.WriteLine("¡Felicidades! Has adivinado el número en " + intentos + " intentos.");
+    }
+
+} while (intentoUsuario != numeroAleatorio);
